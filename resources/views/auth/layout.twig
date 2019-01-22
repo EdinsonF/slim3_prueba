@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Sign In</title>
+</head>
+<body>	
+	{% if dotenv %}
+		<div class="notification">
+			<h4>Environment Variables no settings</h4>			
+		</div>
+	{% endif %}
+	<form action="auth" id="frmSignin" method="POST">
+		{{ csrf_field() | raw }}
+		<h1>Signin</h1>
+		<div class="col-md-6 col-md-offset-3">
+			<div class="col-md6">
+				<label for="email">Email</label>
+				<input type="text" name="email" class="form-control">
+			</div>
+			<div class="col-md-6">
+				<label for="password">Password</label>
+				<input type="password" name="password" class="form-control">
+			</div>
+			<div class="col-md-12">
+				<button type="submit">Sing In</button>
+			</div>
+			{% if flash.getMessages('error') %}
+				<div class="authFailed">
+					{{ flash.getMessage('error') | first }}
+				</div>
+			{% endif %}
+		</div>
+	</form>
+</body>
+</html>
