@@ -7,5 +7,5 @@ class Crud extends Model
 {
     protected $table = 'producto';
     public $timestamps = false;
-    protected $fillable = ['nombre','precio', 'descriccion', 'imagen'];
+    protected $fillable = ['name','price', 'description', 'image'];
 }

@@ -8,9 +8,12 @@ class CrudController extends Controller
 {
     public function index($request, $response, $args)
     {
-	    return $this->view->render($response, 'index.twig');
 
+      /* Aca mostrar de una vez la lista de los productos por medion del CRUD */
 
+      $products = [];
+
+	    return $this->view->render($response, 'index.twig', ['products' => $products ] );
     }
 
     public function show($request, $response, $args)
@@ -24,11 +27,11 @@ class CrudController extends Controller
 
       $create = Crud::create([
 
-           'nombre' => $body['producto'],
+           'name' => $body['producto'],
 
-           'precio' => $body['precio'],
+           'price' => $body['precio'],
 
-           'descriccion' => $body['descripcion'],
+           'description' => $body['descripcion'],
 
        ]);
        var_dump("Registrado");
@@ -39,7 +42,7 @@ class CrudController extends Controller
       // $precio=$body['precio'];
       // $descripcion=$body['descripcion'];
       // echo"PRODUCTO: $nombre, PRECIO: $precio, DESCRIPCION: $descripcion";
-
+       // redireccionar de nuevoa  la vista o ver si se hara con el json o no se ! XD
 
     }
 

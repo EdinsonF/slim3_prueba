@@ -9,46 +9,22 @@ class User extends Migration
      */
     public function up()
     {
-        Capsule::schema()->create('user', function($table)
+
+        Capsule::schema()->create('producto', function($table)
         {
             $table->increments('id');
-            $table->string('username');
-            $table->string('email')->unique()->nullable();
-            $table->string('password');
-            $table->integer('group_id');
-            $table->integer('status');
+            $table->string('name');
+            $table->string('price');
+            $table->integer('description');
+            $table->integer('image');
             $table->timestamps();
         });
-        $array = array(
-            array(
-                'username'  => 'admin',
-                'email'     => 'admin@slim.dev',
-                'password'  => password_hash('admin123',PASSWORD_DEFAULT),
-                'group_id'  => '1',
-                'status'    => '1'
-            ),
-            array(
-                'username'  => 'moderator',
-                'email'     => 'moderator@slim.dev',
-                'password'  => '$2y$10$ElXh/aFKLN1Vf4t2G0DTnupWcEpS2/2OP8fIsQXjHp7KXE3bjcUke',
-                'group_id'  => '1',
-                'status'    => '1'
-            ),
-            array(
-                'username'  => 'user',
-                'email'     => 'user@slim.dev',
-                'password'  => '$2y$10$ElXh/aFKLN1Vf4t2G0DTnupWcEpS2/2OP8fIsQXjHp7KXE3bjcUke',
-                'group_id'  => '1',
-                'status'    => '1'
-            )
-            );
-        Users::insert($array);
     }
     /**
      * Undo the migration
      */
     public function down()
     {
-        Capsule::schema()->drop('user');
+        Capsule::schema()->drop('producto');
     }
 }
