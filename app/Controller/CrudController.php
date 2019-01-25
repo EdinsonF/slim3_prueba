@@ -20,8 +20,26 @@ class CrudController extends Controller
 
     public function store($request, $response, $args)
     {
-      var_dump("hola");
-      //echo '{"wine": ' . json_encode($request) . '}';
+      $body=$request->getParsedBody();
+
+      $create = Crud::create([
+
+           'nombre' => $body['producto'],
+
+           'precio' => $body['precio'],
+
+           'descriccion' => $body['descripcion'],
+
+       ]);
+       var_dump("Registrado");
+       //$body=$request->getParsedBody();
+      //
+      // //dd($body['producto']);
+      // $nombre=$body['producto'];
+      // $precio=$body['precio'];
+      // $descripcion=$body['descripcion'];
+      // echo"PRODUCTO: $nombre, PRECIO: $precio, DESCRIPCION: $descripcion";
+
 
     }
 

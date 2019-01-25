@@ -5,6 +5,7 @@ use \Illuminate\Database\Eloquent\Model;
 
 class Crud extends Model
 {
-    protected $table = 'Crud';
-    protected $fillable = array();    
+    protected $table = 'producto';
+    public $timestamps = false;
+    protected $fillable = ['nombre','precio', 'descriccion', 'imagen'];
 }
