@@ -15,8 +15,8 @@ class User extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('price');
-            $table->integer('description');
-            $table->integer('image');
+            $table->string('description');
+            $table->string('image');
             $table->timestamps();
         });
     }

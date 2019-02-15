@@ -11,7 +11,7 @@ class CrudController extends Controller
 
       /* Aca mostrar de una vez la lista de los productos por medion del CRUD */
 
-      $products = [];
+      $products = Crud::all();
 
 	    return $this->view->render($response, 'index.twig', ['products' => $products ] );
     }
@@ -31,10 +31,16 @@ class CrudController extends Controller
 
            'price' => $body['precio'],
 
-           'description' => $body['descripcion'],
+           'description' => $body['descripcion']
 
        ]);
        var_dump("Registrado");
+
+       $products = Crud::all();
+
+ 	    return $this->view->render($response, 'index.twig', ['products' => $products ] );
+
+       //$this->index(null,null,null);
        //$body=$request->getParsedBody();
       //
       // //dd($body['producto']);

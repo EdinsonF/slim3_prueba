@@ -2,44 +2,21 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>My CRUD</title>
+        <title>My Page Title</title>
 
         <link rel="stylesheet" href="{{baseUrl}}/public/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{baseUrl}}/public/css/main.min.css">
     </head>
     <body>
-       <h2>Mi aplicación en Slim3!</h2>
+       <h2>Mi aplicación en Slim3!</h2><br>
 
        <h3>Registrar Producto</h3><br>
        <form name="registrarP" method="post">
        <h5>NOMBRE:</h5><input type="text" name="producto" id="producto">
        <h5>PRECIO:</h5><input type="text" name="precio" id="precio">
-       <h5>DESCRIPCION:</h5><input type="text" name="descripcion" id="descripcion"></h5><br>
-       
-       <input type="submit" name="registrar" id="registrar" value="Registrar">
-       <input type="submit" name="modificar" id="modificar" value="Modificar">
+       <h5>DESCRIPCION:</h5><input type="text" name="descripcion" id="descripcion"></h5>
+       <h5><input type="submit" name="registrar" id="registrar" value="Registrar"</h5>
      </form>
-
-<hr>
-<h3>Lista de Producto</h3>
-<table align="center">
-     <thead>
-		     <tr>
-			        <th>Nombre</th>
-			        <th>Precio</th>
-              <th>Descripción</th>
-		     </tr>
-	   </thead>
-	   <tbody>
-        {% for producto in products %}
-         <tr>
-           <td>{{ producto.name}}</td>
-           <td>{{ producto.price}}</td>
-           <td>{{ producto.description}}</td>
-         </tr>
-     </tbody>
-       {% endfor %}
-</table>
      <!-- <script src="{{baseUrl}}/public/js/jquery-3.3.1.min.js"></script>
      <script src="{{baseUrl}}/public/js/popper.min.js"></script>
      <script src="{{baseUrl}}/public/js/bootstrap.min.js"></script>
